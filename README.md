@@ -1,4 +1,26 @@
-# Data Science Project Boilerplate
+# Cats and Dogs Image Classifier
+
+EfficientNetB0 image-classification tutorial with adaptive image loading, reproducible train/validation/test splits, baseline and optimized training, checkpoints, evaluation and model persistence.
+
+See [README.es.md](README.es.md) for the complete instructions and [src/image_classifier.py](src/image_classifier.py) for the implementation. The existing sentiment-analysis application remains unchanged.
+
+```bash
+python -m pip install -r requirements-image-classifier.txt
+python src/image_classifier.py --data-dir data/raw/train --prepare-only
+python src/image_classifier.py --data-dir data/raw/train
+```
+
+To continue an interrupted run, repeat the original command with `--resume`, keeping the same output directory, dataset, batch size and total epoch limits:
+
+```bash
+python src/image_classifier.py --data-dir data/raw/train --resume
+```
+
+Recovery uses the last saved epoch, including optimizer state, and skips completed stages. Progress within an unfinished epoch is lost; callback patience counters and augmentation randomness restart. The Spanish guide documents these limits and the backup files to retain.
+
+Provide the labeled `cat.*.jpg` and `dog.*.jpg` images from [Dogs vs. Cats](https://www.kaggle.com/c/dogs-vs-cats/data) first. The dataset is not included in Git. All eleven tests, including interrupted-training recovery and a temporary EfficientNetB0 training run, passed; no real-data accuracy or trained Asirra model is claimed. Outputs are written to `models/image_classifier/`.
+
+## Original Boilerplate
 
 This boilerplate is designed to kickstart data science projects by providing a basic setup for database connections, data processing, and machine learning model development. It includes a structured folder organization for your datasets and a set of pre-defined Python packages necessary for most data science tasks.
 

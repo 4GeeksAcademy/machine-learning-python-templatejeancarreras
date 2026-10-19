@@ -1,3 +1,12 @@
 __pycache__
 .env
 .learn
+/data/raw/train/
+/data/interim/cats_dogs/
+*.zip
+*.keras
+/models/**/backup/
+/models/**/training_config.json
+/models/**/*_complete.json
+/models/**/*_history.csv
+/models/**/*.log

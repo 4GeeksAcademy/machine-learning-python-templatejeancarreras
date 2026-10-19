@@ -1,0 +1,38 @@
+{
+  "seed": 42,
+  "image_size": [
+    200,
+    200
+  ],
+  "class_indices": {
+    "cat": 0,
+    "dog": 1
+  },
+  "mode": "directory",
+  "available_memory_gib": 4.22,
+  "splits": {
+    "train": {
+      "cat": 8749,
+      "dog": 8749
+    },
+    "validation": {
+      "cat": 1875,
+      "dog": 1875
+    },
+    "test": {
+      "cat": 1875,
+      "dog": 1875
+    }
+  },
+  "split_directory": "/workspaces/machine-learning-python-templatejeancarreras/data/interim/cats_dogs/split-rgpiietc",
+  "rejected": [
+    {
+      "path": "data/raw/train/cat.666.jpg",
+      "error": "cannot identify image file 'data/raw/train/cat.666.jpg'"
+    },
+    {
+      "path": "data/raw/train/dog.11702.jpg",
+      "error": "cannot identify image file 'data/raw/train/dog.11702.jpg'"
+    }
+  ]
+}
