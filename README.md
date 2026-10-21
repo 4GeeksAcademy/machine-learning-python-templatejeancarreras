@@ -1,6 +1,29 @@
-# Data Science Project Boilerplate
+# California Housing: K-Means Tutorial
 
-This boilerplate is designed to kickstart data science projects by providing a basic setup for database connections, data processing, and machine learning model development. It includes a structured folder organization for your datasets and a set of pre-defined Python packages necessary for most data science tasks.
+See [README.es.md](README.es.md) for the complete project guide in Spanish and
+[src/housing.ipynb](src/housing.ipynb) for the executed tutorial.
+
+```bash
+pip install -r requirements.txt
+python src/app.py
+python -m unittest discover -s tests -v
+```
+
+The application uses only `Latitude`, `Longitude`, and `MedInc`, splits data
+80/20 before fitting a scaler, trains six K-Means clusters, and tunes an
+interpretable decision tree using training-only cross-validation. Test accuracy
+is 0.9944 and macro F1 is 0.9906 against K-Means pseudo-labels, not ground truth.
+
+Data is loaded from a local `housing.csv` or downloaded using scikit-learn on the
+first run. No database or environment variables are required. Saved models are
+in `models/`, labeled datasets in `data/processed/`, and plots and interpretation
+in [reports/analysis.md](reports/analysis.md). Earlier review datasets and
+[src/explore.ipynb](src/explore.ipynb) are retained but are not used by this project.
+
+## Original Template Reference
+
+The following optional database setup belongs to the original template, not to
+the K-Means tutorial.
 
 ## Structure
 
